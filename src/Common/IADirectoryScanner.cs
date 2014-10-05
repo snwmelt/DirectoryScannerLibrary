@@ -32,9 +32,9 @@ namespace DirectoryScanner.Common
         /// <param name="SearchFor"></param>
         internal IADirectoryScanner(String BaseDirectory, bool Recursive, ScanMode ScanMode, String[] SearchFor) : this(BaseDirectory)
         {
-            this.Recursive = Recursive;
-            this.ScanMode  = ScanMode;
-            this.SearchFor = SearchFor;
+            recursive = Recursive;
+            scanMode  = ScanMode;
+            searchFor = SearchFor;
         }
 
         /// <summary>
@@ -46,10 +46,10 @@ namespace DirectoryScanner.Common
             this.BaseDirectory = BaseDirectory;
 
             DynamicRescanning = false;
-            MaxScanDepth      = -1;
-            IgnoreLocale      = true;
-            IgnoreCase        = false;
-            Recursive         = false;
+            maxScanDepth      = -1;
+            ignoreLocale      = true;
+            ignoreCase        = false;
+            recursive         = false;
             searchFor         = new String[0];
         }
 
@@ -163,7 +163,7 @@ namespace DirectoryScanner.Common
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="eventArgs"></param>
-        protected virtual void onDirectoryEntered(IDirectoryScanner sender, DirectoryInfoNode eventArgs)
+        protected void onDirectoryEntered(IDirectoryScanner sender, DirectoryInfoNode eventArgs)
         {
             if (DirectoryEnteredEvent != null)
             {
@@ -176,7 +176,7 @@ namespace DirectoryScanner.Common
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="eventArgs"></param>
-        protected virtual void onFileFound(IDirectoryScanner sender, FileInfo eventArgs)
+        protected void onFileFound(IDirectoryScanner sender, FileInfo eventArgs)
         {
             if (FileFoundEvent != null)
             {

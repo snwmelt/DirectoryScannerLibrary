@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asynchronous\AsyncScanner.cs" />
+    <Compile Include="Asynchronous\Batch.cs" />
+    <Compile Include="Asynchronous\CpuInfo.cs" />
+    <Compile Include="Asynchronous\Range.cs" />
     <Compile Include="Common\DirectoryInfoNode.cs" />
     <Compile Include="Common\Exceptions.cs" />
     <Compile Include="Common\IADirectoryScanner.cs" />
@@ -47,9 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Synchronous\Scanner.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asynchronous\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -20,7 +20,10 @@ namespace DirectoryScanner.Synchronous
 
         public override void EndScan()
         {
-            Active = false;
+            lock (base._threadLock)
+            {
+                Active = false;
+            }
         }
 
         /// <summary>
